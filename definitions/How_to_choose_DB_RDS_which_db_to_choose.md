@@ -2,8 +2,8 @@
 Choosing the right database depends on understanding your workload, data access patterns, consistency requirements, performance expectations, and operational constraints.
 Below are the main criteria you should evaluate before selecting any DB technology.
 
-####Workload Type: OLTP vs OLAP
-#####OLTP (Online Transaction Processing)
+#### Workload Type: OLTP vs OLAP
+##### OLTP (Online Transaction Processing)
 Used for operational systems where the application performs frequent, small, state-changing operations.
 Characteristics:
 - High volume of short transactions
@@ -14,7 +14,7 @@ Characteristics:
 
 Use databases: PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, Aurora
 
-#####OLAP (Online Analytical Processing)
+##### OLAP (Online Analytical Processing)
 Used for analytical workloads where the system processes heavy, long-running queries across large datasets.
 Characteristics:
 - Complex aggregations and joins
@@ -25,8 +25,8 @@ Characteristics:
 
 Use databases: Redshift, Athena, Snowflake, BigQuery
 
-####Storage Model: Row-Based (Linear) vs Columnar
-#####Row-Based (Linear)
+#### Storage Model: Row-Based (Linear) vs Columnar
+##### Row-Based (Linear)
 Optimized for transactional workloads.
 Pros:
 - Fast for inserts, updates, deletes
@@ -38,7 +38,7 @@ Cons:
 
 Used by: MySQL, PostgreSQL, SQL Server, Oracle, Aurora
 
-#####Columnar
+##### Columnar
 Optimized for analytical workloads.
 Pros:
 - Only reads needed columns → massive speed on aggregates
@@ -51,8 +51,8 @@ Cons:
 
 Used by: Redshift, Snowflake, BigQuery, Athena
 
-####Consistency Model (ACID vs BASE)
-#####ACID (Transactional Consistency)
+#### Consistency Model (ACID vs BASE)
+##### ACID (Transactional Consistency)
 Guarantees correctness in transactional systems.
 
 Atomicity: transaction is all or nothing
@@ -68,7 +68,7 @@ Use ACID when:
 
 Provided by: PostgreSQL, MySQL, SQL Server, Oracle, Aurora
 
-#####BASE (Eventual Consistency)
+##### BASE (Eventual Consistency)
 Used in distributed NoSQL systems for scalability and availability.
 
 Basically Available
@@ -82,20 +82,20 @@ Use BASE when:
 
 Used by: DynamoDB, Cassandra, MongoDB
 
-####Read vs Write Patterns
+#### Read vs Write Patterns
 Different engines excel at different access profiles.
-#####Write-heavy workloads
+##### Write-heavy workloads
 - Need high ingest rate
 - May need sharding or partitioning
 - Require stable low-latency writes
 
-#####Read-heavy workloads
+##### Read-heavy workloads
 - Cached reads
 - Range scans
 - Heavy aggregations
 
-####Data Model
-#####Relational Model (SQL)
+#### Data Model
+##### Relational Model (SQL)
 Represented as tables, rows, and relationships.
 Best for:
 - Strongly structured data
@@ -104,7 +104,7 @@ Best for:
 - Complex JOINs
 - Transactional integrity
 
-#####Document-Oriented Model
+##### Document-Oriented Model
 Stores JSON-like documents.
 Schema-flexible, hierarchical, nested.
 Best for:
@@ -114,7 +114,7 @@ Best for:
 - Event payloads
 - Nested objects
 
-#####Key-Value Model
+##### Key-Value Model
 A super-fast dictionary.
 Best for:
 - Caching
@@ -122,18 +122,18 @@ Best for:
 - Feature flags
 - Extremely fast lookups
 
-####Scalability Requirements
-#####Vertical Scaling (scale-up)
+#### Scalability Requirements
+##### Vertical Scaling (scale-up)
 - Add more CPU/RAM to a single node.
 - Simple but limited
 - Traditional relational engines use this model
 
-#####Horizontal Scaling (scale-out)
+##### Horizontal Scaling (scale-out)
 - Add more nodes; distribute data.
 - Higher complexity
 - Required for massive workloads
 
-####Latency & Availability Requirements
+#### Latency & Availability Requirements
 Evaluate:
 - how fast your queries must respond
 - how often the system can be down
@@ -162,7 +162,7 @@ RPO / RTO Considerations:
 	- Asynchronous replication → >0
 	- Daily snapshots → up to 24h
 
-####Cost
+#### Cost
 Cost varies based on:
 - Instance sizing (CPU/RAM)
 - Storage type and IOPS
@@ -177,7 +177,8 @@ General rule:
 - Enterprise legacy → Oracle / SQL Server
 - OLAP cost-effective → Redshift / Athena
 
------
+---
+
 # RDS, DynamoDB and How to Choose
 
 ## RDS
